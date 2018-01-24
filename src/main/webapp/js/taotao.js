@@ -5,13 +5,14 @@ var TT = TAOTAO = {
 			return ;
 		}
 		$.ajax({
-			url : "http://sso.shop.com/user/token/" + _ticket,
+			//调用sso服务端方法获取token
+			url : "http://192.168.18.184:8080/user/token/" + _ticket,
 			dataType : "jsonp",
 			type : "GET",
 			success : function(data){
 				if(data.status == 200){
 					var username = data.data.username;
-					var html = username + "，欢迎来到商城！<a href=\"http://www.shop.com/user/logout.html\" class=\"link-logout\">[退出]</a>";
+					var html = username + "，欢迎来到商城！<a href=\"javascript:logout()\" class=\"link-logout\">[退出]</a>";
 					$("#loginbar").html(html);
 				}
 			}

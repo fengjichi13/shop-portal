@@ -7,6 +7,10 @@ function login() {
 function regist() {
     return location.href = "http://sso.shop.com/page/register";
 }
+
+function logout() {
+    return location.href = "http://sso.shop.com/page/register";
+}
 function createCookie(a, b, c, d) {
     var d = d ? d : "/";
     if (c) {

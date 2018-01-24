@@ -1129,10 +1129,10 @@ var jdModelCallCenter = {settings: {clstag1: 0,clstag2: 0},tbClose: function() {
             $.jdThickBox({type: "iframe",title: "\u60a8\u5c1a\u672a\u767b\u5f55",source: "http://reg.jd.com/reg/popupPerson?clstag1=" + a.settings.clstag1 + "&clstag2=" + a.settings.clstag2 + "&r=" + Math.random(),width: 390,height: 450,_title: "thicktitler",_close: "thickcloser",_con: "thickconr"})
         }, 20)
     },init: function() {
-//        var a = this;
-//        $.ajax({url: ("https:" == document.location.protocol ? "https://" : "http://") + "passport." + pageConfig.FN_getDomain() + "/new/helloService.ashx?m=ls&sso=0",dataType: "jsonp",success: function(b) {
-//                a.tbClose(), b && b.info && $("#loginbar").html(b.info), a.settings.fn()
-//            }})
+        var a = this;
+        $.ajax({url: ("https:" == document.location.protocol ? "https://" : "http://") + "passport." + pageConfig.FN_getDomain() + "/new/helloService.ashx?m=ls&sso=0",dataType: "jsonp",success: function(b) {
+                a.tbClose(), b && b.info && $("#loginbar").html(b.info), a.settings.fn()
+            }})
     }};
 $.extend(jdModelCallCenter, {autoLocation: function(a) {
         $.login({modal: !0,complete: function(b) {
@@ -1170,9 +1170,8 @@ $.extend(jdModelCallCenter, {autoLocation: function(a) {
 };
 //http://d.360buy.com/configs/get?type=JSON
 var category = {OBJ: $("#_JD_ALLSORT"),
-		//URL_Serv: "http://manage.taotao.com/web/itemcat/all?callback=category.getDataService",
-//		URL_Serv: "http://rest.taotao.com/rest/itemcat/list?callback=category.getDataService",
-		URL_Serv: "http://192.168.18.182:8080/rest/itemcat/list?callback=category.getDataService",
+		URL_Serv: "http://rest.shop.com/rest/itemcat/list?callback=category.getDataService",
+//		URL_Serv: "http://192.168.18.182:8080/rest/itemcat/list?callback=category.getDataService",
 		URL_BrandsServ: "http://d.360buy.com/brandVclist2/get?callback=category.getBrandService&ids=a,9211,9212^b,9214,9215^c,9217,9218^d,9220,9221^e,9223,9224^f,9226,9227^g,9229,9230^h,9232,9233^m,9235,9236^i,9238,9239^j,9241,9242^p,9244,9245^k,9247,9248^l,9250,9251",
 		FN_GetLink: function(a, b) {
 	        var c, d;
